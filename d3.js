@@ -71,22 +71,26 @@ svg.append("defs")
 
 //end slider part-----------------------------------------------------------------------------------
 const nflData = [{
-  date: 19740901,
-Ageing: 7,
-Aids: 1,
-Animal Welfare: 1,
-Bird Flu: null
+	date: '19740901',
+	Ageing: '7'
 },
-{date: 19750901,
-Ageing: 8,
-Aids: 2,
-Animal Welfare: 2,
-  Bird Flu: null}]
+{date: '19750901',
+	Ageing: '8'
+},
+{date: '19760901',
+	Ageing: '9'
+}
 
-alert(Date.now())
+
+//const nflData = [{"Month":"2","Year":"2003","arrest_count":"1"},{"Month":"4","Year":"2003","arrest_count":"1"},{"Month":"7","Year":"2003","arrest_count":"1"},{"Month":"5","Year":"2005","arrest_count":"1"},{"Month":"1","Year":"2006","arrest_count":"1"},{"Month":"4","Year":"2006","arrest_count":"1"},{"Month":"5","Year":"2006","arrest_count":"1"},{"Month":"3","Year":"2007","arrest_count":"1"},{"Month":"4","Year":"2008","arrest_count":"1"},{"Month":"5","Year":"2008","arrest_count":"1"},{"Month":"1","Year":"2009","arrest_count":"1"},{"Month":"6","Year":"2009","arrest_count":"1"},{"Month":"4","Year":"2010","arrest_count":"1"},{"Month":"7","Year":"2010","arrest_count":"1"},{"Month":"11","Year":"2010","arrest_count":"1"},{"Month":"6","Year":"2011","arrest_count":"1"},{"Month":"2","Year":"2012","arrest_count":"2"},{"Month":"7","Year":"2012","arrest_count":"1"},{"Month":"1","Year":"2013","arrest_count":"1"},{"Month":"5","Year":"2013","arrest_count":"1"},{"Month":"1","Year":"2014","arrest_count":"1"},{"Month":"10","Year":"2015","arrest_count":"1"},{"Month":"12","Year":"2016","arrest_count":"1"},{"Month":"3","Year":"2017","arrest_count":"1"},{"Month":"4","Year":"2017","arrest_count":"1"}]
+
+]
+
+console.log(Date.now())
 console.log(nflData)
 d3.json("data.json", function(error, data) {
-  color.domain(d3.keys(nflData[0]).filter(function(key) { // Set the domain of the color ordinal scale to be all the csv headers except "date", matching a color to an issue
+  var data = nflData;
+  color.domain(d3.keys(data[0]).filter(function(key) { // Set the domain of the color ordinal scale to be all the csv headers except "date", matching a color to an issue
     return key !== "date";
   }));
 
