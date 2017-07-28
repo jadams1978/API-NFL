@@ -1,3 +1,22 @@
 img {
-  width: 100px;
+  width: 30px;
+}
+
+.record {
+  padding: 20px 0 20px 0;
+  border-top: 1px solid #333;
+
+}
+.record:hover {
+  background: #eee;
+
+}
+.record:active {
+  color: blue;
+}
+.player, .category {
+  font-weight: bold;
+  font-style: italic;
+
+
 }
